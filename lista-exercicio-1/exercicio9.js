@@ -1,7 +1,7 @@
 /*
 9. Faça um script para somar dois números e multiplicar o resultado pelo primeiro número.
 */
-
+// Aluno: Gabriel Gertrudes De Oliveira Matricula: 23114290182
 const prompt = require('prompt-sync')();
 
 const numero1 = parseFloat(prompt("Digite o primeiro número: "));

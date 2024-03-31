@@ -1,7 +1,7 @@
 /*
 3. Escreva um script para ler o salário mensal atual de um funcionário e o percentual de reajuste. Calcular e escrever o valor do novo salário.
 */
-
+// Aluno: Gabriel Gertrudes De Oliveira Matricula: 23114290182
 const prompt = require('prompt-sync')();
 
 const salarioAtual = parseFloat(prompt("Digite o salário mensal atual do funcionario:"));

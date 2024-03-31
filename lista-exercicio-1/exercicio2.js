@@ -1,7 +1,7 @@
 /*
 2. Escreva um script para ler o número total de eleitores de um município, o número de votos brancos, nulos e válidos. Calcular e escrever o percentual que cada um representa em relação ao total de eleitores.
 */
-
+// Aluno: Gabriel Gertrudes De Oliveira Matricula: 23114290182
 const prompt = require('prompt-sync')();
 
 const totalEleitores = parseInt(prompt("Digite o número total de  eleitores: "));

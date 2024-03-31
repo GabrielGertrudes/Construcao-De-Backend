@@ -1,7 +1,7 @@
 /*
 7. Faça um script que leia duas notas de um aluno, calcule e escreva a média final deste aluno. Considerar que a média é ponderada e que o peso das notas é 4 e 6.
 */
-
+// Aluno: Gabriel Gertrudes De Oliveira Matricula: 23114290182
 const prompt = require('prompt-sync')();
 
 const Nota1 = parseFloat(prompt("Digite a primeira nota do aluno: "));
