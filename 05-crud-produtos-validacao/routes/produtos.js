@@ -28,24 +28,32 @@ router.get('/produtos', (req, res) => {
 router.get('/produtos/:id', (req, res) => {
     const id = req.params.id
     const produto = listaProdutos.find(produto => produto.id == id)
-    res.json(produto)
+    if (produto) {
+        return res.json(produto)
+    }
+    return res.status(404).json({ mensagem: "Produto não encontrado!" })
 })
 
 // CREATE -> Criar um novo produto
 router.post('/produtos', (req, res) => {
     const dadosProduto = req.body
 
+    if (!dadosProduto.nome || !dadosProduto.preco) {
+        return res.status(400).json({ mensagem: "nome e preço são obrigatórios!" })
+    }
+
     const novoProduto = {
-        id: listaProdutos.length + 1,
+        id: Math.round(Math.random() * 1000),
         nome: dadosProduto.nome,
         preco: dadosProduto.preco
     }
 
     listaProdutos.push(novoProduto)
 
-    res.json(
+    res.status(201).json(
         {
-            mensagem: "Produto criado com sucesso!"
+            mensagem: "Produto criado com sucesso!",
+            novoProduto
         }
     )
 })
@@ -55,7 +63,15 @@ router.put('/produtos/:id', (req, res) => {
     const id = req.params.id
     const novosDados = req.body
 
+    if (!novosDados.nome || !novosDados.preco) {
+        return res.status(400).json({ mensagem: "nome e preço são obrigatórios!" })
+    }
+
     const index = listaProdutos.findIndex(produto => produto.id == id)
+
+    if (index == -1) {
+        return res.status(404).json({ mensagem: "Produto não encontrado!" })
+    }
 
     const produtoAtualizado = {
         id: Number(id),
@@ -66,19 +82,22 @@ router.put('/produtos/:id', (req, res) => {
     listaProdutos[index] = produtoAtualizado
 
     res.json({
-        mensagem: "Produto alterado com sucesso!"
+        mensagem: "Produto alterado com sucesso!",
+        produtoAtualizado
     })
-
 })
-//DELETE -> Deletar produto
+
+// DELETE -> Deletar produto
 router.delete('/produtos/:id', (req, res) => {
     const id = req.params.id
-    const index = listaProdutos.findIndex(produto => listaProdutos.id == id)
+    const index = listaProdutos.findIndex(produto => produto.id == id)
+    if (index == -1) {
+        return res.status(404).json({ mensagem: "produto não encontrado!" })
+    }
     listaProdutos.splice(index, 1)
-    res.json({
-        mensagem: "Produto excluido com sucesso!"
-    })
+    res.json({ mensagem: "Produto excluido com sucesso!" })
 })
+
 
 
 

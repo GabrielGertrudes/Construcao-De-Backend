@@ -1,5 +1,5 @@
 {
-  "name": "04-crud-produtos",
+  "name": "05-crud-produtos-validacao",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
