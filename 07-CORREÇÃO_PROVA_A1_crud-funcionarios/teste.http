@@ -1,0 +1,43 @@
+###
+GET http://localhost:3000/produtos HTTP/1.1
+
+###
+GET http://localhost:3000/produtos/0 HTTP/1.1
+
+###
+GET http://localhost:3000/produtos/692 HTTP/1.1
+
+###
+POST http://localhost:3000/produtos HTTP/1.1
+Content-Type: application/json
+
+{
+  "nome": "Teste 1",
+  "preco": 100.0,
+  "tipo": "Móveis",
+  "estoque": 10
+}
+
+###
+PUT http://localhost:3000/produtos/463 HTTP/1.1
+Content-Type: application/json
+
+{
+  "nome": "Cadeira DEZ",
+  "preco": 100.0,
+  "tipo": "Móveis",
+  "estoque": 10
+}
+
+###
+DELETE http://localhost:3000/produtos/348 HTTP/1.1
+
+###
+GET http://localhost:3000/produtos/preco/media HTTP/1.1
+
+###
+GET http://localhost:3000/produtos/estoque/quantidade HTTP/1.1
+
+
+###
+GET http://localhost:3000/produtos/tipo/Móveis
