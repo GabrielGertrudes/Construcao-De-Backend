@@ -21,6 +21,11 @@ router.delete('/cargos/:id', validarID, CargoController.excluir)
 
 
 // Departamentos
+router.get('/departamentos', DepartamentoController.buscarTodos)
+router.get('/departamentos/:id', validarID, DepartamentoController.buscarPorID)
+router.post('/departamentos', validarDepartamento, DepartamentoController.criar)
+router.put('/departamentos/:id', validarID, validarDepartamento, DepartamentoController.atualizar)
+router.delete('/departamentos/:id', validarID, DepartamentoController.excluir)
 
 
 // Funcionarios
