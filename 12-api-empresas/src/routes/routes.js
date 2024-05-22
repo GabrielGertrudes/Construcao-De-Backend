@@ -4,12 +4,14 @@ const router = express.Router()
 // controllers
 const CargoController = require('../controllers/CargoController')
 const DepartamentoController = require('../controllers/DepartamentoController')
+const FuncionarioController = require('../controllers/FuncionarioController')
 
 
 // validators
 const { validarID } = require('../validators/idValidator')
 const { validarCargo } = require('../validators/CargoValidator')
 const { validarDepartamento } = require('../validators/DepartamentoValidator')
+const { validarFuncionarios } = require('../validators/FuncionariosValidator')
 
 
 // Cargo
