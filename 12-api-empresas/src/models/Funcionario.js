@@ -48,7 +48,7 @@ const schema = new mongoose.Schema(
             type: mongoose.Types.ObjectId,
             ref: 'departamento',
             required: false
-        }
+        },
     },
     { timestamps: true })
 

@@ -31,11 +31,11 @@ router.delete('/departamentos/:id', validarID, DepartamentoController.excluir)
 
 
 // Funcionarios
-
-
-
-
-
+router.get('/funcionarios', FuncionarioController.buscarTodos)
+router.get('/funcionarios/:id', validarID, FuncionarioController.buscarPorID)
+router.post('/funcionarios', validarFuncionario, FuncionarioController.criar)
+router.put('/funcionarios/:id', validarID, validarFuncionario, FuncionarioController.atualizar)
+router.delete('/funcionarios/:id', validarID, FuncionarioController.excluir)
 
 
 module.exports = router
