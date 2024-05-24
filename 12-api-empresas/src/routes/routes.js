@@ -6,13 +6,11 @@ const CargoController = require('../controllers/CargoController')
 const DepartamentoController = require('../controllers/DepartamentoController')
 const FuncionarioController = require('../controllers/FuncionarioController')
 
-
 // validators
-const { validarID } = require('../validators/idValidator')
+const { validarID } = require('../validators/IdValidator')
 const { validarCargo } = require('../validators/CargoValidator')
 const { validarDepartamento } = require('../validators/DepartamentoValidator')
-const { validarFuncionarios } = require('../validators/FuncionariosValidator')
-
+const { validarFuncionario } = require('../validators/FuncionarioValidator')
 
 // Cargo
 router.get('/cargos', CargoController.buscarTodos)
@@ -28,7 +26,6 @@ router.get('/departamentos/:id', validarID, DepartamentoController.buscarPorID)
 router.post('/departamentos', validarDepartamento, DepartamentoController.criar)
 router.put('/departamentos/:id', validarID, validarDepartamento, DepartamentoController.atualizar)
 router.delete('/departamentos/:id', validarID, DepartamentoController.excluir)
-
 
 // Funcionarios
 router.get('/funcionarios', FuncionarioController.buscarTodos)
