@@ -5,11 +5,12 @@ const router = express.Router()
 const AutenticacaoController = require('../controllers/AutenticacaoController')
 
 // Validators
-const { validarUsuario } = require('../validators/AutenticacaoValidator')
+const { validarUsuario, validarLogin } = require('../validators/AutenticacaoValidator')
 
 // Rotas
 router.post('/auth/registrar', validarUsuario, AutenticacaoController.registrar)
 
+router.post('/auth/login', validarLogin, AutenticacaoController.login)
 
 
 
