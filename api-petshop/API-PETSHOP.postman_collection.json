@@ -1,0 +1,691 @@
+{
+	"info": {
+		"_postman_id": "0c80505b-644b-49b0-9a55-5528a4eafc24",
+		"name": "API-PETSHOP",
+		"description": "Aqui você tem sua api rest para o gerenciamento de um petshop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33176088"
+	},
+	"item": [
+		{
+			"name": "Autenticação",
+			"item": [
+				{
+					"name": "Registrar Usuário",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Gabriel\",\r\n  \"email\": \"gabrielgertrudes@gmail.com\",\r\n  \"senha\": \"gabriel123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/auth/registrar",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"auth",
+								"registrar"
+							]
+						},
+						"description": "Funcionalidade para registrar um usuário."
+					},
+					"response": []
+				},
+				{
+					"name": "Login de Usuário",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"gabrielgertrudes@gmail.com\",\r\n  \"senha\": \"gabriel123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/auth/login",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						},
+						"description": "Funcionalidade para realizar o login e pegar o token de autenticação."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Paciente",
+			"item": [
+				{
+					"name": "Buscar Todos os Pacientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/pacientes",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"pacientes"
+							]
+						},
+						"description": "Funcionalidade para buscar todos os pacientes."
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Paciente por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/pacientes/666b782eed05beb89473bef3",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"pacientes",
+								"666b782eed05beb89473bef3"
+							]
+						},
+						"description": "Funcionalidade para buscar paciente por ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Novo Paciente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"thor\",\r\n    \"cpf\": \"12345654990\",\r\n    \"dataNascimento\": \"1990-01-01\",\r\n    \"genero\": \"Masculino\",\r\n    \"email\": \"thor@email.com\",\r\n    \"telefone\": \"984654321\",\r\n    \"endereco\": {\r\n        \"rua\": \"miranda\",\r\n        \"numero\": \"1234\",\r\n        \"cidade\": \"brasilia\",\r\n        \"estado\": \"DF\",\r\n        \"cep\": \"12345-668\"\r\n    },\r\n    \"historicoMedico\": \"Histórico médico do Paciente\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/pacientes",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"pacientes"
+							]
+						},
+						"description": "Funcionalidade para criar novo paciente."
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Paciente por ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Bidu\",\r\n        \"cpf\": \"12345678990\",\r\n        \"dataNascimento\": \"1990-01-01T00:00:00.000Z\",\r\n        \"genero\": \"Masculino\",\r\n        \"email\": \"bidu@email.com\",\r\n        \"telefone\": \"987654321\",\r\n        \"endereco\": {\r\n            \"rua\": \"antonio soares\",\r\n            \"numero\": 123,\r\n            \"cidade\": \"brasilia\",\r\n            \"estado\": \"DF\",\r\n            \"cep\": \"12345-678\"\r\n    },\r\n    \"historicoMedico\": \"Histórico médico do Paciente\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/pacientes/666b782eed05beb89473bef3",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"pacientes",
+								"666b782eed05beb89473bef3"
+							]
+						},
+						"description": "Funcionalidade para atualizar paciente por ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Paciente por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/pacientes/666b782eed05beb89473bef3",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"pacientes",
+								"666b782eed05beb89473bef3"
+							]
+						},
+						"description": "Funcionalidade para excluir paciente po ID."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Médico",
+			"item": [
+				{
+					"name": "Buscar Todos os Médicos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/medicos",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"medicos"
+							]
+						},
+						"description": "Funcionalidade para buscar todos os medicos."
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Médico por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/medicos/666b7962ed05beb89473beff",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"medicos",
+								"666b7962ed05beb89473beff"
+							]
+						},
+						"description": "Funcionalidade para buscar medico por ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Novo Médico",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Leticia\",\r\n    \"especialidade\": \"Emergencia e Urgencia\",\r\n    \"email\": \"laticia@email.com\",\r\n    \"telefone\": \"61910102220\",\r\n    \"departamento\": \"Todas as Especialidades\",\r\n    \"crm\": \"12655\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/medicos",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"medicos"
+							]
+						},
+						"description": "Funcionalidade para criar novo medico."
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Médico por ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Arlan\",\r\n    \"especialidade\": \"Dermatologia Veterinária\",\r\n    \"email\": \"arlan@email.com\",\r\n    \"telefone\": \"61910102070\",\r\n    \"departamento\": \"Consultas Gerais\",\r\n    \"crm\": \"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/medicos/666b7962ed05beb89473beff",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"medicos",
+								"666b7962ed05beb89473beff"
+							]
+						},
+						"description": "Funcionalidade para atualizar medico."
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Médico por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/medicos/666b7962ed05beb89473beff",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"medicos",
+								"666b7962ed05beb89473beff"
+							]
+						},
+						"description": "Funcionalidade para excluir medico."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Consulta",
+			"item": [
+				{
+					"name": "Buscar Todas as Consultas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/consultas",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"consultas"
+							]
+						},
+						"description": "Funcionalidade para buscar todas as consultas."
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Consulta por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/consultas/666b7a1fed05beb89473bf07",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"consultas",
+								"666b7a1fed05beb89473bf07"
+							]
+						},
+						"description": "Funcionalidade para buscar consulta por ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Nova Consulta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"paciente\": \"666b782eed05beb89473bef3\",\r\n    \"medico\": \"666b7962ed05beb89473beff\",\r\n    \"data\": \"2024-06-20\",\r\n    \"hora\": \"14:00\",\r\n    \"descricao\": \"Vomitando e com mal estar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/consultas",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"consultas"
+							]
+						},
+						"description": "Funcionalidade para criar nova consulta."
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Consulta por ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"paciente\": \"666b782eed05beb89473bef3\",\r\n    \"medico\": \"666b7962ed05beb89473beff\",\r\n    \"data\": \"2024-06-20\",\r\n    \"hora\": \"14:00\",\r\n    \"descricao\": \"Vomitando e com mal estar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/consultas/666b7a1fed05beb89473bf07",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"consultas",
+								"666b7a1fed05beb89473bf07"
+							]
+						},
+						"description": "Funcionalidade para atualizar consulta."
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Consulta por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/consultas/666b7a1fed05beb89473bf07",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"consultas",
+								"666b7a1fed05beb89473bf07"
+							]
+						},
+						"description": "Funcionalidade para excluir consulta."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tratamento",
+			"item": [
+				{
+					"name": "Buscar Todos os Tratamentos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/tratamentos",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"tratamentos"
+							]
+						},
+						"description": "Funcionalidade para buscar todos os tratamento."
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Tratamento por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/tratamentos/666b7a89ed05beb89473bf10",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"tratamentos",
+								"666b7a89ed05beb89473bf10"
+							]
+						},
+						"description": "Funcionalidade para buscar tratamento por ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Novo Tratamento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"paciente\": \"666b782eed05beb89473bef3\",\r\n    \"consulta\": \"666b7a1fed05beb89473bf07\",\r\n    \"descricao\": \"raio X e medicacao na veia\",\r\n    \"dataInicio\": \"2024-06-20\",\r\n    \"dataFim\": \"2024-07-20\",\r\n    \"status\": \"Em andamento\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/tratamentos",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"tratamentos"
+							]
+						},
+						"description": "Funcionalidade para criar novo tratamento."
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Tratamento por ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"paciente\": \"666b782eed05beb89473bef3\",\r\n    \"consulta\": \"666b7a1fed05beb89473bf07\",\r\n    \"descricao\": \"raio X e medicacao na veia\",\r\n    \"dataInicio\": \"2024-06-20\",\r\n    \"dataFim\": \"2024-07-20\",\r\n    \"status\": \"Em andamento\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/tratamentos/666b7a89ed05beb89473bf10",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"tratamentos",
+								"666b7a89ed05beb89473bf10"
+							]
+						},
+						"description": "Funcionalidade para atualizar tratamento."
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Tratamento por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/tratamentos/666b7a89ed05beb89473bf10",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"tratamentos",
+								"666b7a89ed05beb89473bf10"
+							]
+						},
+						"description": "Funcionalidade para excluir tratamento."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Prescrição",
+			"item": [
+				{
+					"name": "Buscar Todas as Prescrições",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/prescricoes",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"prescricoes"
+							]
+						},
+						"description": "Funcionalidade para buscar todas as prescricoes."
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Prescrição por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/prescricoes/666b7b15ed05beb89473bf1b",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"prescricoes",
+								"666b7b15ed05beb89473bf1b"
+							]
+						},
+						"description": "Funcionalidade para buscar prescricao por ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Nova Prescrição",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tratamento\": \"666b7a89ed05beb89473bf10\",\r\n    \"paciente\": \"666b782eed05beb89473bef3\",\r\n    \"medico\": \"666b7962ed05beb89473beff\",\r\n    \"medicamento\": \"dipirona\",\r\n    \"dosagem\": \"500mg\",\r\n    \"frequencia\": \"6 em 6 h\",\r\n    \"duracao\": \"3 dias\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/prescricoes",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"prescricoes"
+							]
+						},
+						"description": "Funcionalidade para criar nova prescricao."
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Prescrição por ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tratamento\": \"666b7a89ed05beb89473bf10\",\r\n    \"paciente\": \"666b782eed05beb89473bef3\",\r\n    \"medico\": \"666b7962ed05beb89473beff\",\r\n    \"medicamento\": \"dipirona\",\r\n    \"dosagem\": \"500mg\",\r\n    \"frequencia\": \"6 em 6 h\",\r\n    \"duracao\": \"3 dias\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/prescricoes/666b7b15ed05beb89473bf1b",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"prescricoes",
+								"666b7b15ed05beb89473bf1b"
+							]
+						},
+						"description": "Funcionalidade para atualizar prescricao."
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Prescrição por ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/prescricoes/666b7b15ed05beb89473bf1b",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"prescricoes",
+								"666b7b15ed05beb89473bf1b"
+							]
+						},
+						"description": "Funcionalidade para excluir prescricao."
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2Njg5Y2FmMDE4YTU0Y2Q4NzEzYWY4NCIsImVtYWlsIjoiZ2FicmllbGdlcnRydWRlc0BnbWFpbC5jb20iLCJub21lIjoiR2FicmllbCIsImlhdCI6MTcxODI0NzAxNiwiZXhwIjoxNzE4MjUwNjE2fQ.-ZMmODIMM-6E48VKutC2H6DjEDEj4wNxBVs74MTVFbg",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "apiUrl",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
